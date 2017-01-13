@@ -1,5 +1,5 @@
 /* global cpdefine chilipeppr cprequire */
-cprequire_test(["inline:com-chilipeppr-workspace-sample"], function(ws) {
+cprequire_test(["inline:com-chilipeppr-workspace-robz1"], function(ws) {
 
     console.log("initting workspace");
 
@@ -33,12 +33,12 @@ cprequire_test(["inline:com-chilipeppr-workspace-sample"], function(ws) {
 } /*end_test*/ );
 
 // This is the main definition of your widget. Give it a unique name.
-cpdefine("inline:com-chilipeppr-workspace-sample", ["chilipeppr_ready"], function() {
+cpdefine("inline:com-chilipeppr-workspace-robz1", ["chilipeppr_ready"], function() {
     return {
         /**
          * The ID of the widget. You must define this and make it unique.
          */
-        id: "com-chilipeppr-workspace-sample", // Make the id the same as the cpdefine id
+        id: "com-chilipeppr-workspace-robz1", // Make the id the same as the cpdefine id
         name: "Workspace / Sample", // The descriptive name of your widget.
         desc: `A ChiliPeppr Workspace sample.`,
         url: "(auto fill by runme.js)", // The final URL of the working widget as a single HTML file with CSS and Javascript inlined. You can let runme.js auto fill this if you are using Cloud9.
