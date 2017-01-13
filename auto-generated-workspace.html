@@ -231,37 +231,31 @@ cpdefine("inline:com-chilipeppr-workspace-sample", ["chilipeppr_ready"], functio
             );
         },
         /**
-         * Load the Serial Port JSON Server widget via chilipeppr.load()
+         * Load the NEW Serial Port JSON Server widget via chilipeppr.load()
          */
+         
         loadSpjsWidget: function(callback) {
 
             var that = this;
 
             chilipeppr.load(
-                "#com-chilipeppr-widget-serialport-instance",
-                "http://fiddle.jshell.net/chilipeppr/vetj5fvx/show/light/",
-                function() {
-                    console.log("mycallback got called after loading spjs module");
-                    cprequire(["inline:com-chilipeppr-widget-serialport"], function(spjs) {
-                        //console.log("inside require of " + fm.id);
-                        spjs.setSingleSelectMode();
-                        spjs.init({
-                            isSingleSelectMode: true,
-                            defaultBuffer: "default",
-                            defaultBaud: 115200,
-                            bufferEncouragementMsg: 'For your device please choose the "default" buffer in the pulldown and a 115200 baud rate before connecting.'
-                        });
-                        //spjs.showBody();
-                        //spjs.consoleToggle();
-
-                        that.widgetSpjs - spjs;
-                        
-                        if (callback) callback(spjs);
-
-                    });
-                }
+              "#myDivWidgetSerialportRobz",
+              "http://raw.githubusercontent.com/robZeilinga/widget-spjs/master/auto-generated-widget.html",
+              function() {
+                // Callback after widget loaded into #myDivWidgetSerialportRobz
+                // Now use require.js to get reference to instantiated widget
+                cprequire(
+                  ["inline:com-chilipeppr-widget-serialport-robz"], // the id you gave your widget
+                  function(myObjWidgetSerialportRobz) {
+                    // Callback that is passed reference to the newly loaded widget
+                    console.log("Widget / Serial Port JSON Server just got loaded.", myObjWidgetSerialportRobz);
+                    myObjWidgetSerialportRobz.init();
+                  }
+                );
+              }
             );
         },
+        
         /**
          * Load the Console widget via chilipeppr.load()
          */
@@ -372,7 +366,7 @@ cpdefine("inline:com-chilipeppr-workspace-sample", ["chilipeppr_ready"], functio
                         <p class="sample">Template Widget goes here</p>
                     </div>
 
-                    <div id="com-chilipeppr-widget-spconsole-instance">
+                    <div id="myDivWidgetSerialportRobz">
                         Serial Port Console goes here.
                     </div>
 
